@@ -626,17 +626,43 @@ body::-webkit-scrollbar-thumb {
 	width: 100%;
 	max-width: 500px;
 	
-	/*padding: 10px;*/
+	/* Изменяем прозрачные границы на видимые */
+	padding: 10px;
 	font-size: 18px;
 	background: none;
+	
+	/* Убираем transparent границы и делаем их видимыми */
 	border: 1px solid #4a3a2a;
+	border-radius: 4px; /* Добавляем небольшое скругление */
+	
 	outline: none;
 	margin-bottom: 25px;
 	color: #4a3a2a;
 	
-	border-left-color: transparent;
+	/* Добавляем явный z-index и позиционирование */
+	position: relative;
+	z-index: 10;
+	
+	/* Убираем прозрачные границы */
+	/* border-left-color: transparent;
 	border-right-color: transparent;
-	border-top-color: transparent;
+	border-top-color: transparent; */
+	
+	/* Добавляем фон для лучшей видимости */
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Добавляем стили для фокуса поля */
+.rsvp-input:focus {
+	background-color: rgba(255, 255, 255, 0.2);
+	border-color: #4a3a2a;
+	outline: 2px solid rgba(74, 58, 42, 0.2);
+}
+
+/* Добавляем стили для placeholder */
+.rsvp-input::placeholder {
+	color: #4a3a2a;
+	opacity: 0.6;
 }
 .rsvp-block {
 	margin-bottom: 25px;
